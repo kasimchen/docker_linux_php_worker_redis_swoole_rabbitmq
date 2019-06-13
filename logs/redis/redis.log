@@ -1,4 +1,2 @@
-1:M 13 Jun 13:31:24.800 - DB 0: 1 keys (1 volatile) in 4 slots HT.
-1:M 13 Jun 13:31:24.802 - 8 clients connected (0 slaves), 674816 bytes in use
-1:M 13 Jun 13:31:29.866 - DB 0: 1 keys (1 volatile) in 4 slots HT.
-1:M 13 Jun 13:31:29.869 - 8 clients connected (0 slaves), 879576 bytes in use
+1:M 13 Jun 13:32:15.581 - DB 0: 1 keys (1 volatile) in 4 slots HT.
+1:M 13 Jun 13:32:15.582 - 8 clients connected (0 slaves), 674816 bytes in use
