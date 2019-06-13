@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+
+### PHP Worker Container #####################################
+
+    php-worker:
+      build:
+        context: ./php-worker
+        dockerfile: "Dockerfile-${PHP_VERSION}"
+      ports:
+        - "9502:9502"
+      volumes:
+        - ${APPLICATION}:/var/www
+        - ./php-worker/conf.d:/etc/supervisor/conf.d
+        - ./php-worker/log:/etc/supervisor/log
+      networks:
+        - backend
+
+
+
+
+### Networks Setup ############################################
+
+networks:
+  backend:
+    driver: "bridge"
+
+
+ 
