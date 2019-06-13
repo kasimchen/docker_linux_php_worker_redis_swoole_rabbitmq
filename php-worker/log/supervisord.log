@@ -806,3 +806,40 @@
 2019-06-13 13:11:57,137 INFO success: cc-backend-worker-default_02 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2019-06-13 13:11:57,138 INFO success: cc-backend-worker-default_01 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2019-06-13 13:11:57,138 INFO success: cc-backend-worker-default_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-06-13 13:32:59,730 INFO exited: cc-backend-worker-default_03 (exit status 1; not expected)
+2019-06-13 13:33:00,590 INFO spawned: 'cc-backend-worker-default_03' with pid 93
+2019-06-13 13:33:00,669 INFO exited: cc-backend-async_01 (exit status 1; not expected)
+2019-06-13 13:33:00,701 INFO spawned: 'cc-backend-async_01' with pid 94
+2019-06-13 13:33:00,795 INFO exited: cc-backend-async_03 (exit status 1; not expected)
+2019-06-13 13:33:00,808 INFO spawned: 'cc-backend-async_03' with pid 95
+2019-06-13 13:33:00,813 INFO exited: cc-backend-async_02 (exit status 1; not expected)
+2019-06-13 13:33:00,814 INFO exited: cc-backend-async_00 (exit status 1; not expected)
+2019-06-13 13:33:00,816 INFO exited: cc-backend-worker-default_01 (exit status 1; not expected)
+2019-06-13 13:33:00,818 INFO exited: cc-backend-worker-default_00 (exit status 1; not expected)
+2019-06-13 13:33:00,841 INFO spawned: 'cc-backend-async_02' with pid 96
+2019-06-13 13:33:00,855 INFO spawned: 'cc-backend-async_00' with pid 97
+2019-06-13 13:33:00,864 INFO spawned: 'cc-backend-worker-default_01' with pid 98
+2019-06-13 13:33:00,895 INFO spawned: 'cc-backend-worker-default_00' with pid 99
+2019-06-13 13:33:00,904 INFO exited: cc-backend-worker-default_02 (exit status 1; not expected)
+2019-06-13 13:33:01,919 INFO success: cc-backend-async_02 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-06-13 13:33:01,920 INFO success: cc-backend-async_03 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-06-13 13:33:01,922 INFO success: cc-backend-async_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-06-13 13:33:01,923 INFO success: cc-backend-async_01 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-06-13 13:33:01,924 INFO success: cc-backend-worker-default_03 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-06-13 13:33:01,930 INFO spawned: 'cc-backend-worker-default_02' with pid 100
+2019-06-13 13:33:01,933 INFO success: cc-backend-worker-default_01 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-06-13 13:33:01,934 INFO success: cc-backend-worker-default_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-06-13 13:33:02,937 INFO success: cc-backend-worker-default_02 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2019-06-13 13:33:05,679 INFO exited: cc-backend-worker-default_03 (exit status 1; not expected)
+2019-06-13 13:33:05,777 INFO spawned: 'cc-backend-worker-default_03' with pid 143
+2019-06-13 13:33:05,823 INFO exited: cc-backend-async_01 (exit status 1; not expected)
+2019-06-13 13:33:05,939 INFO spawned: 'cc-backend-async_01' with pid 144
+2019-06-13 13:33:06,032 INFO exited: cc-backend-async_02 (exit status 1; not expected)
+2019-06-13 13:33:06,082 INFO spawned: 'cc-backend-async_02' with pid 145
+2019-06-13 13:33:06,089 INFO exited: cc-backend-worker-default_01 (exit status 1; not expected)
+2019-06-13 13:33:06,156 INFO spawned: 'cc-backend-worker-default_01' with pid 146
+2019-06-13 13:33:06,277 INFO exited: cc-backend-async_03 (exit status 1; not expected)
+2019-06-13 13:33:06,318 INFO spawned: 'cc-backend-async_03' with pid 147
+2019-06-13 13:33:06,320 INFO exited: cc-backend-worker-default_00 (exit status 1; not expected)
+2019-06-13 13:33:06,340 INFO spawned: 'cc-backend-worker-default_00' with pid 148
+2019-06-13 13:33:06,350 INFO exited: cc-backend-async_00 (exit status 1; not expected)
