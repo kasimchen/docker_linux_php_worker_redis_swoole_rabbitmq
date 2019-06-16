@@ -1,21 +1,18 @@
-FROM nginx:alpine
+FROM nginx:latest
 
 MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
+
+COPY ./sources.list.stretch /etc/apt/sources.list
+
 
 ADD nginx.conf /etc/nginx/
 
 # If you're in China, or you need to change sources, will be set CHANGE_SOURCE to true in .env.
 
-ARG CHANGE_SOURCE=true
-RUN if [ ${CHANGE_SOURCE} = true ]; then \
-    # Change application source from dl-cdn.alpinelinux.org to aliyun source
-    sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/' /etc/apk/repositories \
-;fi
 
-RUN apk update \
-    && apk upgrade \
-    && apk add --no-cache bash \
-    && adduser -D -H -u 1000 -s /bin/bash www-data
+RUN apt-get update \
+    && apt-get upgrade \
+    && usermod -u 1000  www-data
 
 ARG PHP_UPSTREAM_CONTAINER=php-fpm
 ARG PHP_UPSTREAM_PORT=9000
