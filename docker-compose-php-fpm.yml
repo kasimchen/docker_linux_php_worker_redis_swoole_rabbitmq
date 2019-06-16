@@ -95,6 +95,7 @@ services:
         - ./redis/${REDIS_VERSION}:/etc/redis:ro
         - ${DATA_SAVE_PATH}/redis/data:/data
         - ./logs/redis:/var/log/redis
+      privileged: true
       ports:
         - "${REDIS_PORT}:6379"
       command:

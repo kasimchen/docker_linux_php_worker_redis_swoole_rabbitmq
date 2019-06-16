@@ -16,6 +16,18 @@ FROM laradock/php-fpm:2.0-71
 
 MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
 
+COPY ./sources.list.stretch /etc/apt/sources.list
+
+
+################################
+#Rabbmitmq
+
+###############################
+
+RUN apt-get update\
+    && apt-get -y install librabbitmq-dev\
+    && pecl  install amqp 1.9.3\
+    && docker-php-ext-enable amqp
 
 #####################################
 # PHP REDIS EXTENSION FOR PHP 7.0

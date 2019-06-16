@@ -9,13 +9,21 @@ FROM laradock/php-fpm:2.0-71
 MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
 
 
-RUN echo "deb http://mirrors.163.com/debian/ jessie main non-free contrib" >/etc/apt/sources.list && \
-    echo "deb-src http://mirrors.163.com/debian/ jessie main non-free contrib" >>/etc/apt/sources.list 
+COPY ./sources.list.stretch /etc/apt/sources.list
 
 RUN apt-get update \
     && apt-get -y install supervisor
 
 
+################################
+#Rabbmitmq
+
+###############################
+
+RUN apt-get update\
+    && apt-get -y install librabbitmq-dev\
+    && pecl  install amqp 1.9.3\
+    && docker-php-ext-enable amqp
 
 #################################
 RUN  printf "\n" | pecl install -o -f redis \
