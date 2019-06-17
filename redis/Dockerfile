@@ -6,6 +6,8 @@ MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
 #RUN mkdir -p /usr/local/etc/redis
 #COPY redis.conf /usr/local/etc/redis/redis.conf
 
+RUN chmod -R 777 /var/log/redis
+
 VOLUME /data
 
 EXPOSE 6379
