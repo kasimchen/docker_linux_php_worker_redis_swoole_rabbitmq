@@ -4,7 +4,7 @@
 #--------------------------------------------------------------------------
 #
 
-FROM laradock/php-fpm:2.0-71
+FROM registry.cn-beijing.aliyuncs.com/lnmprrsw/php-base:v1.0
 
 MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
 
