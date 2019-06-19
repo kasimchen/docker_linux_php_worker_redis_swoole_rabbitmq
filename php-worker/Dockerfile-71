@@ -62,7 +62,7 @@ RUN mkdir -p /var/www
 # Make sure you rebuild your container with every change.
 #
 
-COPY supervisord.conf /etc/supervisord.conf
+COPY supervisord.conf /etc/
 
 ENTRYPOINT ["/usr/bin/supervisord", "-n", "-c",  "/etc/supervisord.conf"]
 

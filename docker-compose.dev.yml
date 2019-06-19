@@ -4,6 +4,7 @@ services:
 
 ### Applications Code Container #############################
 
-    applications:
+    applications1:
+      image: tianon/true
       volumes:
         - ${APPLICATION}:/var/www
