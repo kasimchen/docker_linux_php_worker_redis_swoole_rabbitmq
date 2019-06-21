@@ -12,7 +12,8 @@ MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
 COPY ./sources.list.stretch /etc/apt/sources.list
 
 
-RUN apt-get -y install git
+RUN apt-get -y install git&&\
+apt-get install  -y zip unzip
 
 RUN curl -s http://getcomposer.org/installer | php && \
     echo "export PATH=${PATH}:/var/www/vendor/bin" >> ~/.bashrc && \
