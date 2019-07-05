@@ -10,8 +10,8 @@ ADD nginx.conf /etc/nginx/
 # If you're in China, or you need to change sources, will be set CHANGE_SOURCE to true in .env.
 
 
-RUN apt-get update \
-    && apt-get upgrade \
+RUN apt-get -y update \
+    && apt-get -y upgrade \
     && usermod -u 1000  www-data
 
 ARG PHP_UPSTREAM_CONTAINER=php-fpm
