@@ -12,7 +12,7 @@
 # Note: Base Image name format {image-tag}-{php-version}
 #
 
-FROM registry.cn-beijing.aliyuncs.com/lnmprrsw/php-base:v1.0
+FROM registry.cn-beijing.aliyuncs.com/lnmprrsw/php-base:latest
 
 MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
 

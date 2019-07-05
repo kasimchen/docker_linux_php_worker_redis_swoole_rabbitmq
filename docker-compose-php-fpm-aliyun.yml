@@ -11,7 +11,7 @@ services:
 ### PHP-FPM Container #######################################
 
     php-fpm:
-      image: registry.cn-beijing.aliyuncs.com/lnmprrsw/php-fpm:v1.0
+      image: registry.cn-beijing.aliyuncs.com/lnmprrsw/php-fpm:latest
       volumes_from:
         - applications
       restart: always
@@ -23,7 +23,7 @@ services:
         - backend
 
     php-worker:
-      image: registry.cn-beijing.aliyuncs.com/lnmprrsw/php-worker:v1.0
+      image: registry.cn-beijing.aliyuncs.com/lnmprrsw/php-worker:latest
       ports:
         - "5200:5200"
       restart: always
@@ -39,7 +39,7 @@ services:
 ### NGINX Server Container ##################################
 
     nginx:
-      image: registry.cn-beijing.aliyuncs.com/lnmprrsw/nginx:v1.0
+      image: registry.cn-beijing.aliyuncs.com/lnmprrsw/nginx:latest
       volumes_from:
         - applications
       volumes:
@@ -58,7 +58,7 @@ services:
 ### MySQL Container #########################################
 
     mysql:
-      image: registry.cn-beijing.aliyuncs.com/lnmprrsw/mysql:v1.0
+      image: registry.cn-beijing.aliyuncs.com/lnmprrsw/mysql:latest
       environment:
         - MYSQL_DATABASE=${MYSQL_DATABASE}
         - MYSQL_USER=${MYSQL_USER}
@@ -77,7 +77,7 @@ services:
 ### Redis Container #########################################
 
     redis:
-      image: registry.cn-beijing.aliyuncs.com/lnmprrsw/redis:v1.0
+      image: registry.cn-beijing.aliyuncs.com/lnmprrsw/redis:latest
       volumes:
         - ./redis/${REDIS_VERSION}:/etc/redis:ro
         - ${DATA_SAVE_PATH}/redis/data:/data
@@ -94,7 +94,7 @@ services:
 ### RabbitMQ Container ######################################
 
     rabbitmq:
-      image: registry.cn-beijing.aliyuncs.com/lnmprrsw/rabbitmq:v1.0
+      image: registry.cn-beijing.aliyuncs.com/lnmprrsw/rabbitmq:latest
       ports:
         - "${RABBITMQ_NODE_HOST_PORT}:5672"
         - "${RABBITMQ_MANAGEMENT_HTTP_HOST_PORT}:15672"
