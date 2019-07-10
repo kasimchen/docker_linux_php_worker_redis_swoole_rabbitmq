@@ -32,6 +32,7 @@ RUN apt-get update && \
     libfreetype6-dev \
     libssl-dev \
     libmcrypt-dev \
+    bash-completion \
   && rm -rf /var/lib/apt/lists/*
 
 # Install the PHP mcrypt extention
