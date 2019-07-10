@@ -35,6 +35,8 @@ RUN apt-get update && \
     bash-completion \
   && rm -rf /var/lib/apt/lists/*
 
+RUN source /usr/share/bash-completion/bash_completion
+
 # Install the PHP mcrypt extention
 RUN apt-get update \
     && apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev \
