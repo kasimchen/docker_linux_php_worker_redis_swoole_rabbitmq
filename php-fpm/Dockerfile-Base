@@ -35,7 +35,7 @@ RUN apt-get update && \
     bash-completion \
   && rm -rf /var/lib/apt/lists/*
 
-RUN source /usr/share/bash-completion/bash_completion
+RUN /bin/bash -c "source /usr/share/bash-completion/bash_completion"
 
 # Install the PHP mcrypt extention
 RUN apt-get update \
