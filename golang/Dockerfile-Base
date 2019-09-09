@@ -1,0 +1,10 @@
+FROM golang:latest
+
+run go get github.com/Masterminds/glide \
+&&go install github.com/Masterminds/glide
+
+RUN mkdir /app 
+ADD . /app/ 
+WORKDIR /app 
+RUN go build -o main . 
+CMD ["/app/main"]
