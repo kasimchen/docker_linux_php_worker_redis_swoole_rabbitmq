@@ -6,13 +6,8 @@ RUN apt update
 RUN apt install -y vim
 RUN apt install -y net-tools
 
-run go get github.com/Masterminds/glide \
-&&go install github.com/Masterminds/glide
 
-#RUN mkdir /app 
-#ADD . /app/ 
-#WORKDIR /app 
-#RUN go build -o main . 
-#CMD ["/app/main"]
+RUN go get github.com/astaxie/beego && go get github.com/beego/bee && go get  github.com/Masterminds/glide && go install github.com/Masterminds/glide
+
 
 
