@@ -1,13 +1,6 @@
 version: '2'
 
 services:
-### Applications Code Container #############################
-
-    applications:
-      image: tianon/true
-      volumes:
-        - ${APPLICATION}:/var/www
-
 ### RabbitMQ Container ######################################
 
     rabbitmq:
