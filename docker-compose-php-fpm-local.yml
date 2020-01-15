@@ -11,28 +11,26 @@ services:
 ### PHP-FPM Container #######################################
 
     php-fpm:
-      build:
-        context: ./php-fpm
-        dockerfile: "Dockerfile-${PHP_VERSION}"
+      image: registry.cn-beijing.aliyuncs.com/lnmprrsw/php-fpm:latest
       volumes_from:
         - applications
+      restart: always
       volumes:
         - ./php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
       expose:
         - "9000"
-      extra_hosts:
-        - "dockerhost:${DOCKER_HOST_IP}"
-      environment:
-        - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
+      ports:
+        - "2020:2020"  
+        - "2021:2021"  
+        - "2023:2023"  
       networks:
         - backend
 
     php-worker:
-      build:
-        context: ./php-worker
-        dockerfile: "Dockerfile-${PHP_VERSION}"
+      image: registry.cn-beijing.aliyuncs.com/lnmprrsw/php-worker:latest
       ports:
         - "5200:5200"
+      restart: always
       volumes_from:
           - applications
       volumes:
@@ -45,11 +43,7 @@ services:
 ### NGINX Server Container ##################################
 
     nginx:
-      build:
-        context: ./nginx
-        args:
-          - PHP_UPSTREAM_CONTAINER=${NGINX_PHP_UPSTREAM_CONTAINER}
-          - PHP_UPSTREAM_PORT=${NGINX_PHP_UPSTREAM_PORT}
+      image: registry.cn-beijing.aliyuncs.com/lnmprrsw/nginx:latest
       volumes_from:
         - applications
       volumes:
@@ -57,6 +51,8 @@ services:
         - ${NGINX_SITES_PATH}:/etc/nginx/sites-available
       ports:
         - "${NGINX_HOST_HTTP_PORT}:80"
+        - "8001:8001"
+        - "8002:8002"
         - "${NGINX_HOST_HTTPS_PORT}:443"
       depends_on:
         - php-fpm
@@ -65,50 +61,10 @@ services:
         - backend
 
 
-### MySQL Container #########################################
-
-    mysql:
-      build:
-        context: ./mysql
-        args:
-          - MYSQL_VERSION=${MYSQL_VERSION}
-      environment:
-        - MYSQL_DATABASE=${MYSQL_DATABASE}
-        - MYSQL_USER=${MYSQL_USER}
-        - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-        - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-        - TZ="Asia/Shanghai"
-      volumes:
-        - ${DATA_SAVE_PATH}/mysql:/var/lib/mysql
-        - ${MYSQL_ENTRYPOINT_INITDB}:/docker-entrypoint-initdb.d
-      ports:
-        - "${MYSQL_PORT}:3306"
-      networks:
-        - backend
-
-
-### Redis Container #########################################
-
-    redis:
-      image: redis:${REDIS_VERSION}
-      volumes:
-        - ./redis/${REDIS_VERSION}:/etc/redis:ro
-        - ${DATA_SAVE_PATH}/redis/data:/data
-        - ./logs/redis:/var/log/redis
-      privileged: true
-      ports:
-        - "${REDIS_PORT}:6379"
-      command:
-        - redis-server
-        - /etc/redis/redis.conf
-      networks:
-        - backend
-
-
 ### RabbitMQ Container ######################################
 
     rabbitmq:
-      build: ./rabbitmq
+      image: registry.cn-beijing.aliyuncs.com/lnmprrsw/rabbitmq:latest
       ports:
         - "${RABBITMQ_NODE_HOST_PORT}:5672"
         - "${RABBITMQ_MANAGEMENT_HTTP_HOST_PORT}:15672"
