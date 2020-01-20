@@ -2,12 +2,13 @@ FROM golang:latest
 
 MAINTAINER Razil "chenhuan@liaosearch.com"
 
-RUN apt update
-RUN apt install -y vim
-RUN apt install -y net-tools
+#RUN apt update
+#RUN apt install -y vim
+#RUN apt install -y net-tools
 
 
-RUN go get github.com/astaxie/beego && go get github.com/beego/bee && go get  github.com/Masterminds/glide && go install github.com/Masterminds/glide
+#RUN go get github.com/astaxie/beego && go get github.com/beego/bee && go get  github.com/Masterminds/glide && go install github.com/Masterminds/glide
 
 
 
+RUN go get github.com/astaxie/beego && go get github.com/beego/bee

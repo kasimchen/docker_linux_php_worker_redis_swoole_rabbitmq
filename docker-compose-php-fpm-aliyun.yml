@@ -116,17 +116,17 @@ services:
 
 ### ffmpeg Container ######################################
 
-    ffmpeg:
-      image: registry.cn-beijing.aliyuncs.com/media/ffmpeg:latest
-      volumes_from:
-        - applications
-      volumes:
-        - ./ffmpeg:/root:ro
-      ports:
-        - "8101:8080"
-      privileged: true
-      networks:
-        - backend
+    # ffmpeg:
+    #   image: registry.cn-beijing.aliyuncs.com/media/ffmpeg:latest
+    #   volumes_from:
+    #     - applications
+    #   volumes:
+    #     - ./ffmpeg:/root:ro
+    #   ports:
+    #     - "8101:8080"
+    #   privileged: true
+    #   networks:
+    #     - backend
 
 ### Networks Setup ############################################
 
