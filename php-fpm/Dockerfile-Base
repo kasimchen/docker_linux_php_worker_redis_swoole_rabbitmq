@@ -8,7 +8,6 @@ FROM php:7.2-fpm
 
 LABEL maintainer="chenhuan <chenhuan@liaosearch.com>"
 
-COPY ./sources.list.stretch /etc/apt/sources.list
 
 #
 #--------------------------------------------------------------------------
