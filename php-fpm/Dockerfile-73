@@ -24,10 +24,10 @@ COPY ./sources.list.stretch /etc/apt/sources.list
 
 ###############################
 
-RUN apt-get update\
-    && apt-get -y install librabbitmq-dev\
-    && pecl  install amqp 1.9.3\
-    && docker-php-ext-enable amqp
+#RUN apt-get update\
+#    && apt-get -y install librabbitmq-dev\
+#    && pecl  install amqp 1.9.3\
+#    && docker-php-ext-enable amqp
 
 #####################################
 # PHP REDIS EXTENSION FOR PHP 7.0
@@ -41,8 +41,8 @@ RUN printf "\n" | pecl install -o -f redis \
 # Swoole EXTENSION FOR PHP 7
 #####################################
 
-RUN pecl install swoole \
-    &&  docker-php-ext-enable swoole 
+#RUN pecl install swoole \
+#    &&  docker-php-ext-enable swoole 
 
 
 #####################################
