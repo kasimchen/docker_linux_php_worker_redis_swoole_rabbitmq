@@ -10,5 +10,6 @@ MAINTAINER Razil "chenhuan@liaosearch.com"
 #RUN go get github.com/astaxie/beego && go get github.com/beego/bee && go get  github.com/Masterminds/glide && go install github.com/Masterminds/glide
 
 
-
 RUN go get github.com/astaxie/beego && go get github.com/beego/bee
+
+RUN go env -w GO111MODULE=on && go env -w GOPROXY=https://goproxy.cn,direct
